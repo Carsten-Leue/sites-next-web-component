@@ -1,21 +1,28 @@
 {
   "name": "@carsten-leue/sites-next-web-component",
   "version": "1.0.1",
+  "keywords": [
+    "library",
+    "sites-next"
+  ],
   "repository": "git@github.com:Carsten-Leue/sites-next-web-component.git",
-  "author": "Dr. Carsten Leue <carsten.leue@gmx.net>",
   "license": "MIT",
+  "author": "Dr. Carsten Leue <carsten.leue@gmx.net>",
+  "files": [
+    "dist/bundle.js"
+  ],
   "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack"
   },
   "devDependencies": {
+    "@acoustic-content-sdk/api": "^9",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "@acoustic-content-sdk/api": "^9"
+    "webpack-cli": "^3.3.11"
   },
-  "files": [
-    "dist/bundle.js"
-  ]
+  "publishConfig": {
+    "access": "public"
+  }
 }
