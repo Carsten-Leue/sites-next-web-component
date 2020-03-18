@@ -1,0 +1,1 @@
+Sample implementation for a web component. Make sure to compile all dependencies into the exported file.
