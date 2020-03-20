@@ -12,10 +12,17 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      }
     ],
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ],
+  },
+  externals: {
+    '@acoustic-content-sdk/web-components-services': '@acoustic-content-sdk/web-components-services'
   },
   output: {
     filename: 'bundle.js',

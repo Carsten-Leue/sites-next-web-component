@@ -17,6 +17,9 @@
   },
   "devDependencies": {
     "@acoustic-content-sdk/api": "^9",
+    "@acoustic-content-sdk/web-components-services": "^9",
+    "rxjs": "^6.5.4",
+    "html-loader": "^1.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8",
     "webpack": "^4.42.0",
