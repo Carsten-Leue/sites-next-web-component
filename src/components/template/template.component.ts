@@ -1,26 +1,26 @@
 import { RenderingContextV2 } from '@acoustic-content-sdk/api';
-import { ACOUSTIC_LOGGER_SERVICE} from '@acoustic-content-sdk/web-components-services';
+import { ACOUSTIC_LOGGER_SERVICE } from '@acoustic-content-sdk/web-components-services';
 
 import template from './template.html';
 
 const logger = ACOUSTIC_LOGGER_SERVICE.get('TemplateComponent');
 
 export class TemplateComponent extends HTMLElement {
+  set renderingContext(value: RenderingContextV2) {
+    logger.info('renderingContext', value);
+  }
 
-    set renderingContext(value: RenderingContextV2) {
-        console.log('TemplateComponent', 'renderingContext', value);
-    }
+  set layoutMode(value: string) {
+    logger.info('layoutMode', value);
+  }
 
-    set layoutMode(value: string) {
-        console.log('TemplateComponent', 'layoutMode', value);
-    }
+  constructor() {
+    super();
+    logger.info('Constructing ...');
+  }
 
-    constructor() {
-        super();        
-
-    }
-
-    connectedCallback() {
-        this.innerHTML = template;
-    }
+  connectedCallback() {
+    logger.info('connectedCallback');
+    this.innerHTML = template;
+  }
 }

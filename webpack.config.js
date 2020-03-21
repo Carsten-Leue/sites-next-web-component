@@ -4,30 +4,34 @@ const { name } = JSON.parse(readFileSync(resolve(__dirname, 'package.json')));
 
 module.exports = {
   entry: './src/index.ts',
-  mode: "production",
+  mode: 'production',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: 'html-loader'
       }
-    ],
+    ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.tsx', '.ts', '.js']
   },
   externals: {
-    '@acoustic-content-sdk/web-components-services': '@acoustic-content-sdk/web-components-services'
+    '@acoustic-content-sdk/web-components-services':
+      '@acoustic-content-sdk/web-components-services',
+    '@acoustic-content-sdk/utils': '@acoustic-content-sdk/utils',
+    rxjs: 'rxjs',
+    'rxjs/operators': 'rxjs/operators'
   },
   output: {
     filename: 'bundle.js',
     library: name,
     libraryTarget: 'umd',
-    path: resolve(__dirname, 'dist'),
-  },
+    path: resolve(__dirname, 'dist')
+  }
 };
